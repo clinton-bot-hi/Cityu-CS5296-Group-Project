@@ -1,6 +1,6 @@
 # Repository for CS5296 Course Project (Group 9)
 
-This repository aims to reproduce and deploy the Kubernetes cluster with **AWS EKS** and **kOps**. 
+This repository aims at reproducing and deploying the Kubernetes cluster with **AWS EKS** and **kOps**. 
 
 Most of the codes are borrowed from 
  - [prometheus-operator / kube-prometheus](https://github.com/prometheus-operator/kube-prometheus)
@@ -54,9 +54,15 @@ Similarly, to deploy the demo application with kOps, we need to move to our appl
 ```
 kops create cluster --name <our-cluster-name> --state <our-s3-bucket-location> --zones <our-availability-zone> --master-size t2.large --node-size t2.medium --node-count 3
 
+kops update cluster --name <our-cluster-name> --yes --admin
+
 kubectl create ns boutique
 kubectl -n boutique apply -f ./release/kubernetes-manifests.yaml
 kubectl -n boutique get svc/frontend-external
+```
+Then, validate the created cluster by running following code
+```
+kops vaidate cluster
 ```
 
 ### Monitoring with metric-server API
