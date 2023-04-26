@@ -62,7 +62,7 @@ kubectl -n boutique get svc/frontend-external
 ```
 Then, validate the created cluster by running following code
 ```
-kops vaidate cluster
+kops validate cluster
 ```
 
 ### Monitoring with metric-server API
