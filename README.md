@@ -1,4 +1,4 @@
-# Repository for CS5296 Course Project (Group 9)
+# Artifact Repository for CS5296 Course Project (Group 9)
 
 This repository aims at reproducing and deploying the Kubernetes cluster with **AWS EKS** and **kOps**. 
 
